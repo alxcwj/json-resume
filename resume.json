@@ -3,234 +3,269 @@
     "theme": "elegant"
   },
   "basics": {
-    "name": "Thomas Davis",
-    "label": "Web Developer",
-    "image": "https://avatars0.githubusercontent.com/u/416209?s=460&u=38f220a2c9c658141804f881c334c594eb1642ac&v=4",
-    "summary": "I'm a full stack web developer who can build apps from the ground up. I've worked mostly at startups so I am used to wearing many hats. I am a very product focussed developer who priotizes user feedback first and foremost. I'm generally very flexible when investigating new roles. ",
-    "website": "https://lordajax.com",
-    "email": "thomasalwyndavis@gmail.com",
+    "name": "Alex Chow",
+    "label": "Ph.D. Candidate, Sociology",
+    "email": "alexwjchow[at]stanford.edu",
     "location": {
-      "city": "Melbourne",
-      "countryCode": "AU"
-    },
-    "profiles": [
-      {
-        "username": "ajaxdavis",
-        "url": "https://twitter.com/ajaxdavis",
-        "network": "twitter"
-      },
-      {
-        "url": "https://github.com/thomasdavis",
-        "username": "thomasdavis",
-        "network": "github"
-      }
-    ]
+      "address": "450 Jane Stanford Way, Building 120, Room 160",
+      "postalCode": "94305-2047",
+      "city": "Stanford",
+      "region": "CA",
+      "countryCode": "US"
+    }
   },
   "education": [
     {
-      "endDate": "2009-12-12",
-      "startDate": "2008-02-12",
-      "area": "Software Engineering (incomplete)",
-      "studyType": "Bachelors",
-      "institution": "The University of Queensland"
-    }
-  ],
-  "references": [
-    {
-      "reference": "Thomas was hired as a lead developer and, upon the leaving of our co-founder took over as CTO of Earbits. Thomas is, hands down, one of those A Players you hear of companies dying to hire. He is incredibly smart, not just at code but about everything from classical music to Chinese language and culture. Thomas is great to work with and, as a well established contributor to open source projects and several successful ventures, commands the respect of engineers at all levels. I would suggest doing anything you can to have him on your team.",
-      "name": "Joey Flores, Co-founder and CEO of Earbits, Inc."
+      "institution": "Stanford University",
+      "area": "Sociology",
+      "studyType": "Ph.D. Candidate",
+      "startDate": "2020",
+      "courses": [
+        "Dissertation: The Social Significance of Education",
+        "Dissertation Committee: Dr. Michelle Jackson (Advisor), Dr. Florencia Torche, Dr. David Grusky",
+        "Qualifying Exams: Social Stratification, Economic Sociology"
+      ]
     },
     {
-      "reference": "I've had the great pleasure of working with Thomas for the past three years at Earbits, and on a few side projects. Two years ago our CTO left on a moment's notice, Thomas saved our company by quickly stepping up to fill this role. He has been with our company through thick and thin and made serious personal sacrifices in order to help the company during tough times. He is a phenomenal hacker and a true team player. Highly recommended!",
-      "name": "Yotam Rosenbaum, SVP of Operations, Earbits, Inc."
+      "institution": "Stanford University",
+      "area": "Sociology",
+      "studyType": "Master of Arts",
+      "endDate": "2022",
+      "courses": [
+        "Master’s Thesis: Expansion and Returns: A Causal Inference Approach to the Positional Value of Education",
+        "Advisors: Dr. Michelle Jackson, Dr. Florencia Torche"
+      ]
     },
     {
-      "reference": "Thomas is an extremely talented engineer with a very broad range of skills and experience. From being a thought leader in the front-end community via backbonetutorials.com and cdnjs.com, to designing and implementing the API for cdnjs.com, working with Thomas has been fantastic learning experience. Thomas is truly a full stack develop, and his work output is incredible. If there is any opportunity to work with Thomas, I take it. He is the definition of an A player.",
-      "name": "Ryan Kirkman, Senior Software Engineer at Nerdwallet"
-    },
-    {
-      "reference": "On Thomas Davis... Hire this guy. Do not be fooled. Incredibly capable and fast. Plays well with others. Unbelievable at front-end work end programming but that is just the start. Visionary. Hire him before I do.",
-      "name": "Greg Davis"
-    }
-  ],
-  "skills": [
-    {
-      "keywords": [
-        "HTML / JSX",
-        "SCSS / CSS / BEM / Styled Components",
-        "Javascript / Typescript",
-        "React / Next",
-        "Redux / Apollo"
-      ],
-      "level": "Senior",
-      "name": "Frontend"
-    },
-    {
-      "keywords": ["Node", "Ruby", "Python", "Postgres", "Redis", "Serverless"],
-      "level": "Senior",
-      "name": "Backend"
-    },
-    {
-      "keywords": ["AWS", "G Cloud", "Heroku", "Caching"],
-      "level": "Senior",
-      "name": "Devops"
-    }
-  ],
-  "awards": [
-    {
-      "title": "Defender of the Internet",
-      "awarder": "Fight For The Future"
+      "institution": "University of British Columbia",
+      "area": "Sociology",
+      "studyType": "Bachelor of Arts (Honours)",
+      "startDate": "2016",
+      "endDate": "2020",
+      "courses": [
+        "Honors Thesis: Complicating the International Student Classification in Canada: A Computational Grounded Theory Approach",
+        "Supervisor: Dr. Qiang Fu"
+      ]
     }
   ],
   "work": [
     {
-      "summary": "Tokenized is a Bitcoin wallet for issuing, managing and trading digital tokens. I built out the front end which was packaged as an electron app. It was a difficult frontend to build because we store the users keys locally and used them to sign transactions and contracts.",
-      "website": "https://tokenized.com/",
-      "name": "Tokenized",
-      "location": "Melbourne",
-      "position": "Senior Javascript Developer",
-      "startDate": "2020-05-05",
-      "highlights": ["React", "Redux", "SCSS", "Product"]
-    },
-    {
-      "summary": "Blockbid is an Australian crypto currency exchange. I started off on the frontend but eventually became lead tech and worked on every moving piece of the exchange. I really enjoyed working with liquidity providers and connecting their platforms to help us achieve liquid markets.",
-      "website": "https://platform.blockbid.io",
-      "name": "Blockbid",
-      "location": "Melbourne",
-      "position": "Senior Javascript Developer",
-      "startDate": "2018-03-01",
-      "endDate": "2020-01-01",
+      "name": "Stanford University",
+      "location": "Stanford, CA",
+      "position": "Research Experience",
+      "startDate": "2020",
+      "summary": "Research roles in sociology and poverty/inequality labs.",
       "highlights": [
-        "React, Apollo, Styled Components",
-        "Node.js / Rails",
-        "Docker / Heroku / GCP",
-        "Used Figma for design and UX work",
-        "Optimizing markets with tens of millions of rows using SQL."
+        "Jun 2025 – Present: Voices Lab: \"American Voices Project.\" Research Assistant for Dr. David Grusky, Stanford Center on Poverty and Inequality.",
+        "Mar 2023 – Present: Social Networks Lab: \"Social Networks and Cellphone Mobility Data.\" Lab Coordinator and Research Assistant for Dr. David Grusky, Stanford Center on Poverty and Inequality.",
+        "Sep 2022 – May 2023: \"COVID and Infant Health.\" Research Assistant for Dr. Florencia Torche, Stanford Department of Sociology."
       ]
     },
     {
+      "name": "University of British Columbia",
+      "location": "Vancouver, BC",
+      "position": "Research Experience",
+      "startDate": "2016",
+      "endDate": "2020",
+      "summary": "Research experience in sociology and data science labs.",
       "highlights": [
-        "Worked with Postgres, Redis and Dynamodb for storage.",
-        "Hosted on a mixture of Heroku Apps and EC2 servers.",
-        "Caching by Fastly and Cloudflare",
-        "Hybrid app supported on all platforms"
-      ],
-      "summary": "Built a very large and complex React / Redux application. It works on all platforms and has IOS/Android builds due to it being a PWA. (wrapped it in React Native though only implementing a WebView)",
-      "website": "https://listium.com",
-      "pinned": true,
-      "name": "Listium",
-      "position": "Developer",
-      "startDate": "2016-01-01",
-      "endDate": "2018-01-01"
+        "May 2018 – May 2021: \"Intergenerational Educational Mobility Over the Past Century in Canada.\" Co-Investigator with Dr. Neil Guppy, UBC Department of Sociology.",
+        "May 2019 – Dec 2019: \"Developing Natural Language Processing Tools for Sharing of Indigenous and Community Knowledge.\" Data Science for Social Good Research Fellow, National Energy Board & UBC Data Science Institute.",
+        "May 2019 – Dec 2019: \"Romantic Relationships in Canada.\" Research Assistant for Dr. Yue Qian, UBC Department of Sociology."
+      ]
     },
     {
+      "name": "Stanford University",
+      "location": "Stanford, CA",
+      "position": "Teaching & Mentorship",
+      "startDate": "2020",
+      "endDate": "2025",
+      "summary": "Graduate teaching, mentorship, and supervision roles.",
       "highlights": [
-        "Millions of sites use the CDN in production",
-        "Larger market share than Yahoo's, Microsoft's and Google's javascript content distribution networks",
-        "We serve hundreds of billions request a month",
-        "Contains over 3000 popular Javascript libraries",
-        "Millions of developers visit the site per year"
-      ],
-      "pinned": true,
-      "summary": "Following Google's CDN for jQuery, we decided to start a CDN for the less popular Javascript frameworks. The CDN is community moderated and open source on GitHub. We secured a partnership with Cloudflare who now supports the infrastructure.",
-      "website": "http://www.cdnjs.com",
-      "name": "Cdnjs",
-      "position": "Co-Founder",
-      "startDate": "2011-01-08"
+        "Nov 2024 – Aug 2025: Graduate Research Assistant Internship Supervisor, Stanford Institute for Research in the Social Sciences Research Experience Program",
+        "Jun 2021 – Aug 2021: Graduate Research Mentor, Stanford Summer Research Early Identification Program",
+        "Jan 2023 – Mar 2023: Graduate Teaching Assistant, SOC 382: Sociological Methodology II (Statistics for an Open Science: Principles of Regression II)",
+        "Sep 2022 – Dec 2022: Graduate Teaching Assistant, SOC 381: Sociological Methodology I (Introduction)",
+        "Sep 2021 – Dec 2021: Graduate Teaching Assistant, SOC 114/214: Economic Sociology"
+      ]
     },
     {
+      "name": "University of British Columbia",
+      "location": "Vancouver, BC",
+      "position": "Teaching & Mentorship",
+      "startDate": "2016",
+      "endDate": "2020",
+      "summary": "Undergraduate teaching assistantships and mentorship roles.",
       "highlights": [
-        "Developed new tools for contacting congress",
-        "Brainstormed campaign ideas to raise maximum awareness about issues",
-        "Lots of social networking integration"
-      ],
-      "summary": "Hired to take EFF's campaigning to the next level by building an action centre in Ruby on Rails. The action centre is built around some large open source tools that lower the barrier to entry when contacting congress.",
-      "website": "http://www.eff.org",
-      "name": "Electronic Frontier Foundation",
-      "position": "Developer",
-      "startDate": "2014-04-01",
-      "endDate": "2016-01-01"
+        "May 2020 – Jun 2020: Undergraduate Teaching Assistant, ANTH/SOCI 480: Urban Ethnographic Field School",
+        "Jan 2020 – Apr 2020: Undergraduate Teaching Assistant, SOCI 372: Contemporary Directions in Theory",
+        "Sep 2019 – Apr 2020: Undergraduate Teaching Assistant, DSCI 100: Introduction to Data Science",
+        "Sep 2019 – Dec 2019: Undergraduate Teaching Assistant, SOCI 301: Development and Underdevelopment",
+        "Sep 2018 – May 2019: Undergraduate Teaching Assistant, SOCI 100: Introduction to Sociology",
+        "Sep 2019 – Apr 2020: Student Directed Seminar Leader and Coordinator, SOCI 433: Scaling the Ivory Tower: Sociology of Higher Education",
+        "Oct 2019: Workshop Leader and Coordinator, Undergraduate Social Statistics Study Group",
+        "Sep 2017 – Apr 2019: Mentorship Program Coordinator (2018–2019) and Peer Mentor (2017–2019), Coordinated Arts Program"
+      ]
     },
     {
+      "name": "University of British Columbia",
+      "location": "Vancouver, BC",
+      "position": "Academic Service",
+      "startDate": "2016",
+      "endDate": "2020",
+      "summary": "Academic service roles within the department and faculty.",
       "highlights": [
-        "Managed a small team of developers and designers",
-        "Built the entire frontend application with Backbone.js",
-        "Transferred all of the infrastructure from Heroku to AWS"
-      ],
-      "summary": "Started off as a front end developer but took on the role of CTO in early 2013. The application frontend is built with Javascript and organized as a single page application that talks to a collection of Rails web servers which are connected to MongoDB.",
-      "website": "http://www.earbits.com",
-      "name": "Earbits",
-      "position": "CTO",
-      "endDate": "2015-01-09",
-      "startDate": "2013-03-08"
+        "Jan 2019 – May 2020: Advisory Committee Member, Advanced Research Cohort (ARC) Program, UBC Department of Sociology",
+        "Jan 2019 – May 2019: Tenure-Track Instructor Hiring Committee Member, Coordinated Arts Program, UBC Faculty of Arts",
+        "Sep 2017 – May 2019: Lead Typesetter (2018–2019) and Associate Editor (2017–2018), Sojourners: Undergraduate Journal of Sociology",
+        "Feb 2018: Selection Panel Member, Arts Undergraduate Society Humanities and Social Sciences Conference"
+      ]
+    }
+  ],
+  "publications": [
+    {
+      "name": "Intergenerational Educational Mobility Over the Past Century in Canada",
+      "publisher": "Canadian Review of Sociology",
+      "releaseDate": "2021",
+      "website": "https://doi.org/10.1111/cars.12348",
+      "summary": "Chow, Alex, and Neil Guppy. 2021. \"Intergenerational Educational Mobility Over the Past Century in Canada.\" Canadian Review of Sociology 58(3):372-398."
     },
     {
-      "highlights": ["This resume is built with JSON Resume", "Over 3000 stars on Github", "Community developed themes", "Tens of thousands of users"],
-      "summary": "JSON Resume is a community driven open source initiative to create a JSON based standard for resumes. There is no reason why there can't be a common standard for writing a resume that can be extended with an ecosystem of open source tools.",
-      "website": "http://jsonresume.org",
-      "pinned": true,
-      "name": "JSON Resume",
-      "position": "Founder",
-      "startDate": "2014-04-01"
+      "name": "The Subjective Social Ladder: Actual, Perceived, and Projected Mobility in 22 Countries",
+      "summary": "Chow, Alex. \"The Subjective Social Ladder: Actual, Perceived, and Projected Mobility in 22 Countries.\" Under review."
     },
     {
-      "highlights": [
-        "Generated  37,000,000 banner views",
-        "100, 000 phone calls to congress",
-        "500, 000 emails",
-        "250, 000 signatures"
-      ],
-      "summary": "Worked on many politically charged campaigns against mass surveillance. Not only technically challenging work but also a lot of networking and getting my hands dirty with politics.    Our biggest project was \"TheDayWeFightBack\"..",
-      "website": "http://www.taskforce.is",
-      "name": "Taskforce.is",
-      "position": "Developer",
-      "startDate": "2013-06-01",
-      "endDate": "2016-01-01"
+      "name": "How Much Does Education Matter for Social Status? Findings from a Conjoint Experiment",
+      "summary": "Chow, Alex. \"How Much Does Education Matter for Social Status? Findings from a Conjoint Experiment.\" In preparation."
     },
     {
-      "highlights": [
-        "The site and blog combined have managed to receive over 200,000 visitors in 2014."
-      ],
-      "summary": "An international directory of civilian drone / UAV operators for hire. Services include aerial photography, aerial video, mapping, surveying, precision agriculture, real estate photography, remote inspections and infrared imaging. Our plan is to be the place to go when looking for UAV/Drone services. The website is built in Backbone.js and API is built with Node.js and Postgres. ",
-      "website": "http://www.dronehire.org",
-      "name": "Drone Hire",
-      "position": "Co-Founder",
-      "startDate": "2013-01-01"
+      "name": "Residential Relocation Reshapes Daily Exposure Segregation",
+      "summary": "Qiao, Si, Junxi Qu, Rosina Pradhananga, Alex Chow, Sarah-Eve Dill, David Grusky, and Anthony Gar-On Yeh. \"Residential Relocation Reshapes Daily Exposure Segregation.\" Under review."
     },
     {
-      "highlights": [
-        "Over two million unique visitors a year",
-        "25,000+ ebook downloads",
-        "300,000+ Youtube views"
-      ],
-      "summary": "I write tutorials and blog post regarding the popular Javascript framework Backbone.js. The tutorials cover a range of topics regarding front end development aimed at beginners, experts and anyone in between.",
-      "website": "http://backbonetutorials.com",
-      "name": "BackboneTutorials.com",
-      "position": "Founder",
-      "startDate": "2011-01-01",
-      "endDate": "2014-01-01"
+      "name": "A Supervised LLM System for Large-Scale, Data-Secure Qualitative Coding",
+      "summary": "van der Velden, Max, David Grusky, and Alex Chow. \"A Supervised LLM System for Large-Scale, Data-Secure Qualitative Coding.\" In preparation."
+    }
+  ],
+  "awards": [
+    {
+      "title": "Knight-Hennessy Scholars Program",
+      "awarder": "Stanford University",
+      "date": "2020"
     },
     {
-      "summary": "Ephox is a worldwide company who is heavily involved with the development of TinyMce and enterprise editors. My primary role included building front-end widgets and applications. Worked on a major product using Backbone.js as a base. Heavily involved in UI/UX design and wire-framing. Also spend a lot of time designing API specifications and documentation.",
-      "website": "http://ephox.com",
-      "name": "Ephox",
-      "position": "Front-end Developer",
-      "endDate": "2012-06-01",
-      "startDate": "2011-01-01"
+      "title": "Data Science for Social Good (DSSG) Fellowship",
+      "awarder": "Data Science Institute, UBC",
+      "date": "2019"
+    },
+    {
+      "title": "Graduate Research Opportunity",
+      "awarder": "Stanford School of Humanities and Sciences",
+      "date": "2025"
+    },
+    {
+      "title": "Sociology PhD Dissertation Research Opportunity",
+      "awarder": "Stanford Department of Sociology",
+      "date": "2025"
+    },
+    {
+      "title": "Governor General's Silver Medal in Arts",
+      "awarder": "University of British Columbia",
+      "date": "2020"
+    },
+    {
+      "title": "Outstanding Graduating Student, Canadian Sociological Association",
+      "awarder": "Canadian Sociological Association",
+      "date": "2020"
+    },
+    {
+      "title": "Kaspar Naegele Memorial Prize in Sociology",
+      "awarder": "University of British Columbia",
+      "date": "2020"
+    },
+    {
+      "title": "University of British Columbia Scholarship",
+      "awarder": "University of British Columbia",
+      "date": "2019"
+    },
+    {
+      "title": "Faculty of Arts International Student Scholarship",
+      "awarder": "University of British Columbia",
+      "date": "2019"
+    },
+    {
+      "title": "Katherine Brearley Arts Scholarship",
+      "awarder": "University of British Columbia",
+      "date": "2019"
+    },
+    {
+      "title": "Faculty of Arts International Student Scholarship",
+      "awarder": "University of British Columbia",
+      "date": "2018"
+    },
+    {
+      "title": "Katherine Brearley Arts Scholarship",
+      "awarder": "University of British Columbia",
+      "date": "2018"
+    },
+    {
+      "title": "Mo Lin Yu Memorial Prize in the Faculty of Arts",
+      "awarder": "University of British Columbia",
+      "date": "2018"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Technical",
+      "keywords": ["Python", "R", "Stata"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English"
+    },
+    {
+      "language": "Mandarin"
     }
   ],
   "interests": [
     {
-      "name": "Gardening"
+      "name": "Research Interests",
+      "keywords": [
+        "Social stratification, inequality, mobility",
+        "Educational inequality, higher education",
+        "Quantitative, statistical, and survey methods",
+        "Computational methods, network analysis, and natural language processing"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Conference Presentations",
+      "highlights": [
+        "Jan 2026: How Much Does Education Matter for Social Status? Findings from a Conjoint Experiment. — RC28 Online Meeting on Educational Inequalities | Sciences Po (Virtual)",
+        "Aug 2025: Perceptions of Social Status: Findings from a Conjoint Experiment. — American Sociological Association Annual Meeting 2025 | Chicago, IL",
+        "Nov 2023: Perceptions of Social Status: Findings from a Conjoint Experiment. — New Methods to Measure Intergenerational Mobility | Stone Center for Research on Wealth Inequality and Mobility, University of Chicago, IL",
+        "Aug 2023: The Subjective Social Ladder: Actual, Perceived, and Projected Mobility in 22 Countries. — American Sociological Association Annual Meeting 2023 | Philadelphia, PA",
+        "Jun 2023: The Post-Liberal Social Classes: Actual and Perceived Levels of Income Inequality and Associated Values. — International Sociological Association World Congress of Sociology 2023 | Melbourne, Australia",
+        "Aug 2022: Expansion and Returns: A Causal Inference Approach to the Positional Value of Education. — American Sociological Association Annual Meeting 2022 | Los Angeles, CA",
+        "Aug 2021: Intergenerational Educational Assortative Mating: A Study of Individuals Born Between 1970 and 1985. — American Sociological Association Annual Meeting 2021 | Virtual",
+        "May 2021: Intergenerational Educational Assortative Mating: A Study of Individuals Born Between 1970 and 1985. — Canadian Population Society Annual Meeting 2021 | Virtual",
+        "Aug 2019: Intergenerational Educational Mobility Over the Past Century in Canada. — American Sociological Association Annual Meeting 2019 (Honors Program) | New York, NY",
+        "Jun 2019: Intergenerational Educational Mobility Over the Past Century in Canada. — Canadian Sociological Association Annual Meeting 2019 | Vancouver, BC",
+        "May 2019: Intergenerational Educational Mobility Over the Past Century in Canada. — UBC Anthropology and Sociology Undergraduate Conference 2019 | Vancouver, BC",
+        "Mar 2019: Intergenerational Educational Mobility Over the Past Century in Canada. — UBC Multidisciplinary Undergraduate Research Conference 2019 | Vancouver, BC",
+        "Jan 2019: Intergenerational Educational Mobility Over the Past Century in Canada. — Harvard University National Collegiate Research Conference 2019 | Cambridge, MA"
+      ]
     },
     {
-      "name": "Music / Jamming"
-    },
-    {
-      "name": "Reading / Writing"
-    },
-    {
-      "name": "Open Source"
+      "name": "Professional Affiliations",
+      "highlights": [
+        "American Sociological Association",
+        "Canadian Sociological Association",
+        "Canadian Population Society",
+        "International Sociological Association"
+      ]
     }
   ]
 }
