@@ -25,24 +25,21 @@ async function generatePDF() {
   const page = await browser.newPage();
   
   // Intercept font requests and serve from local files
-  await page.route('**', async (route) => {
+  await page.route('**/fonts/**', async (route) => {
     const url = route.request().url();
-    if (url.includes('/fonts/')) {
-      const fontName = url.split('/fonts/').pop();
-      const fontPath = path.join(__dirname, 'public', 'fonts', fontName);
-      
-      if (fs.existsSync(fontPath)) {
-        const fontData = fs.readFileSync(fontPath);
-        await route.fulfill({
-          status: 200,
-          contentType: 'font/otf',
-          body: fontData
-        });
-      } else {
-        await route.abort();
-      }
+    const fontName = url.split('/fonts/').pop();
+    const fontPath = path.join(__dirname, 'public', 'fonts', fontName);
+    
+    if (fs.existsSync(fontPath)) {
+      const fontData = fs.readFileSync(fontPath);
+      await route.fulfill({
+        status: 200,
+        contentType: 'font/otf',
+        body: fontData
+      });
     } else {
-      await route.continue();
+      console.warn(`Warning: Font file not found: ${fontName}`);
+      await route.abort();
     }
   });
   
