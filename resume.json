@@ -238,6 +238,10 @@
     {
       "name": "Technical",
       "keywords": ["Python", "R", "Stata"]
+    },
+    {
+      "name": "Languages",
+      "keywords": ["English", "Mandarin"]
     }
   ],
   "languages": [

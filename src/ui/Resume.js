@@ -12,7 +12,6 @@ import ResearchExperience from './ResearchExperience';
 import TeachingMentorship from './TeachingMentorship';
 import AcademicService from './AcademicService';
 import Skills from './Skills';
-import Languages from './Languages';
 import ProfessionalAffiliations from './ProfessionalAffiliations';
 import References from './References';
 
@@ -39,7 +38,6 @@ const Resume = ({ resume }) => {
       <TeachingMentorship work={resume.work} />
       <AcademicService work={resume.work} />
       <Skills skills={resume.skills} />
-      <Languages languages={resume.languages} />
       <ProfessionalAffiliations projects={resume.projects} />
       <References references={resume.references} />
     </Layout>

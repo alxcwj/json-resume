@@ -10,15 +10,24 @@ const MonthYearDate = ({ date }) => {
     return <Text>Present</Text>;
   }
 
-  // If it already looks like "Month Year" format, return as-is
+  // If it already looks like "Month Year" format, convert to short month
   if (/^[A-Za-z]+\s+\d{4}$/.test(date.trim())) {
-    return <Text>{date}</Text>;
+    const monthMap = {
+      'January': 'Jan', 'February': 'Feb', 'March': 'Mar', 
+      'April': 'Apr', 'May': 'May', 'June': 'Jun',
+      'July': 'Jul', 'August': 'Aug', 'September': 'Sep',
+      'October': 'Oct', 'November': 'Nov', 'December': 'Dec'
+    };
+    
+    const parts = date.trim().split(' ');
+    const shortMonth = monthMap[parts[0]] || parts[0];
+    return <Text>{shortMonth} {parts[1]}</Text>;
   }
 
   const fullDate = new Date(date);
 
-  // Format as "Month Year" (e.g., "January 2021")
-  const options = { year: 'numeric', month: 'long' };
+  // Format as "Month Year" (e.g., "Jan 2021")
+  const options = { year: 'numeric', month: 'short' };
   const formattedDate = fullDate.toLocaleDateString('en-US', options);
 
   return <Text>{formattedDate ?? 'Present'}</Text>;
