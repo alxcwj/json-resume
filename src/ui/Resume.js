@@ -1,15 +1,17 @@
 import styled from 'styled-components';
-import Projects from './Projects';
 import Hero from './Hero';
 import Summary from './Summary';
 import Education from './Education';
-import Work from './Work';
-import Certificates from './Certificates';
+import ResearchInterests from './ResearchInterests';
 import Publications from './Publications';
 import Awards from './Awards';
+import ConferencePresentations from './ConferencePresentations';
+import ResearchExperience from './ResearchExperience';
+import TeachingMentorship from './TeachingMentorship';
+import AcademicService from './AcademicService';
 import Skills from './Skills';
-import Interests from './Interests';
 import Languages from './Languages';
+import ProfessionalAffiliations from './ProfessionalAffiliations';
 import References from './References';
 
 const Layout = styled.div`
@@ -25,14 +27,16 @@ const Resume = ({ resume }) => {
       <Hero basics={resume.basics} />
       <Summary basics={resume.basics} />
       <Education education={resume.education} />
-      <Work work={resume.work} />
-      <Projects projects={resume.projects} />
-      <Certificates certificates={resume.certificates} />
+      <ResearchInterests interests={resume.interests} />
       <Publications publications={resume.publications} />
       <Awards awards={resume.awards} />
-      <Languages languages={resume.languages} />
+      <ConferencePresentations projects={resume.projects} />
+      <ResearchExperience work={resume.work} />
+      <TeachingMentorship work={resume.work} />
+      <AcademicService work={resume.work} />
       <Skills skills={resume.skills} />
-      <Interests interests={resume.interests} />
+      <Languages languages={resume.languages} />
+      <ProfessionalAffiliations projects={resume.projects} />
       <References references={resume.references} />
     </Layout>
   );
