@@ -4,7 +4,9 @@ import Summary from './Summary';
 import Education from './Education';
 import ResearchInterests from './ResearchInterests';
 import Publications from './Publications';
-import Awards from './Awards';
+import Fellowships from './Fellowships';
+import ResearchGrants from './ResearchGrants';
+import HonorsAwards from './HonorsAwards';
 import ConferencePresentations from './ConferencePresentations';
 import ResearchExperience from './ResearchExperience';
 import TeachingMentorship from './TeachingMentorship';
@@ -29,7 +31,9 @@ const Resume = ({ resume }) => {
       <Education education={resume.education} />
       <ResearchInterests interests={resume.interests} />
       <Publications publications={resume.publications} />
-      <Awards awards={resume.awards} />
+      <Fellowships awards={resume.awards} />
+      <ResearchGrants awards={resume.awards} />
+      <HonorsAwards awards={resume.awards} />
       <ConferencePresentations projects={resume.projects} />
       <ResearchExperience work={resume.work} />
       <TeachingMentorship work={resume.work} />
