@@ -1,22 +1,43 @@
 {
-  "name": "thomasdavis",
+  "name": "jsonresume-theme-academic-professional",
   "version": "1.0.0",
-  "description": "This is the resume of Thomas Davis. God of web development.",
-  "main": "index.js",
+  "description": "An academic-oriented JSON Resume theme based on jsonresume-theme-professional v1.1.0",
+  "main": "./index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node build.js",
+    "serve": "npm run build && resume serve --theme .",
+    "export:html": "node generate-html.js",
+    "export:pdf": "node generate-html.js && node generate-pdf.js",
+    "export": "npm run build && npm run export:pdf"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thomasdavis/resume.git"
+    "url": "git+https://github.com/alxcwj/json-resume.git"
   },
   "keywords": [
-    "resume"
+    "resume",
+    "json-resume",
+    "theme",
+    "academic",
+    "cv"
   ],
-  "author": "Thomas Davis",
-  "license": "ISC",
+  "author": "Alex Chow",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/thomasdavis/resume/issues"
+    "url": "https://github.com/alxcwj/json-resume/issues"
   },
-  "homepage": "https://github.com/thomasdavis/resume#readme"
+  "homepage": "https://github.com/alxcwj/json-resume#readme",
+  "dependencies": {
+    "prismjs": "^1.29.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^5.0.1",
+    "styled-components": "^6"
+  },
+  "devDependencies": {
+    "esbuild": "^0.27.3",
+    "playwright": "^1.58.2",
+    "resume-cli": "^3.0.8"
+  }
 }
