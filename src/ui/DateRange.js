@@ -5,6 +5,7 @@ const Range = styled.div`
   display: flex;
   font-style: italic;
   font-size: 13px;
+  white-space: nowrap;
 `;
 
 const DateRange = ({ startDate, endDate }) => {

@@ -10,11 +10,14 @@ const Publications = ({ publications }) => {
     <div>
       <Section title="Publications">
         {publications.map((p, key) => {
+          // Use status if available, otherwise use releaseDate
+          const dateOrStatus = p.status || p.releaseDate;
+          
           return (
             <Experience
               title={p.name}
               subTitle={p.publisher}
-              date={p.releaseDate}
+              date={dateOrStatus}
               summary={p.summary}
               key={key}
             />

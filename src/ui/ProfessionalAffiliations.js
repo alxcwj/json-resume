@@ -1,5 +1,5 @@
 import Section from './Section';
-import Experience from './Experience';
+import List from './List';
 
 const ProfessionalAffiliations = ({ projects }) => {
   if (!projects) {
@@ -18,7 +18,9 @@ const ProfessionalAffiliations = ({ projects }) => {
   return (
     <div>
       <Section title="Professional Affiliations">
-        <Experience highlights={profAffiliations.highlights} />
+        <div className="secondary">
+          <List items={profAffiliations.highlights} />
+        </div>
       </Section>
     </div>
   );
