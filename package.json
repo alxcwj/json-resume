@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node build.js",
-    "serve": "npm run build && resume serve --theme ."
+    "serve": "npm run build && resume serve --theme .",
+    "export:html": "node generate-html.js",
+    "export:pdf": "node generate-html.js && node generate-pdf.js",
+    "export": "npm run build && npm run export:pdf"
   },
   "repository": {
     "type": "git",
@@ -34,6 +37,7 @@
   },
   "devDependencies": {
     "esbuild": "^0.27.3",
+    "playwright": "^1.58.2",
     "resume-cli": "^3.0.8"
   }
 }

@@ -54,8 +54,18 @@ npm run build
 npx resume serve --theme . --resume resume.json --port 8080
 
 # Export to HTML
-npx resume export resume.html --theme . --resume resume.json
+npm run export:html
+
+# Export to PDF
+npm run export:pdf
+
+# Build and export everything (HTML + PDF)
+npm run export
 ```
+
+The exported files will be:
+- `resume.html` - HTML version of your resume
+- `Alex Chow - Resume.pdf` - PDF version of your resume
 
 ## Using This Theme
 

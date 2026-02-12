@@ -1,7 +1,7 @@
 node_modules/
 package/
 *.tgz
-resume.html
 test-output.html
-*.pdf
 .DS_Store
+# Allow specific PDF files to be committed
+# *.pdf
