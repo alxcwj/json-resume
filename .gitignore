@@ -1,0 +1,6 @@
+node_modules/
+package/
+*.tgz
+resume.html
+*.pdf
+.DS_Store
