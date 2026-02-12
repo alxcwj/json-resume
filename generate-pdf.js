@@ -24,8 +24,31 @@ async function generatePDF() {
 
   const page = await browser.newPage();
   
+  // Intercept font requests and serve from local files
+  await page.route('**', async (route) => {
+    const url = route.request().url();
+    if (url.includes('/fonts/')) {
+      const fontName = url.split('/fonts/').pop();
+      const fontPath = path.join(__dirname, 'public', 'fonts', fontName);
+      
+      if (fs.existsSync(fontPath)) {
+        const fontData = fs.readFileSync(fontPath);
+        await route.fulfill({
+          status: 200,
+          contentType: 'font/otf',
+          body: fontData
+        });
+      } else {
+        await route.abort();
+      }
+    } else {
+      await route.continue();
+    }
+  });
+  
   console.log('Setting content...');
-  await page.setContent(html, {
+  // Set base URL to current directory so font paths resolve correctly
+  await page.goto(`file://${htmlPath}`, {
     waitUntil: 'networkidle'
   });
 
