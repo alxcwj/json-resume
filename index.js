@@ -34,10 +34,10 @@ __export(index_exports, {
 });
 module.exports = __toCommonJS(index_exports);
 var import_server = require("react-dom/server");
-var import_styled_components12 = require("styled-components");
+var import_styled_components14 = require("styled-components");
 
 // src/ui/Resume.js
-var import_styled_components11 = __toESM(require("styled-components"));
+var import_styled_components13 = __toESM(require("styled-components"));
 
 // src/ui/Hero.js
 var import_styled_components2 = __toESM(require("styled-components"));
@@ -202,8 +202,14 @@ var DateComponent = ({ date }) => {
   if (!date) {
     return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Text, { children: "Present" });
   }
+  if (isNaN(Date.parse(date)) && !/^\d{4}$/.test(date)) {
+    return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Text, { children: date });
+  }
+  if (/^\d{4}$/.test(date)) {
+    return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Text, { children: date });
+  }
   const fullDate = new Date(date);
-  const options = { year: "numeric", month: "long" };
+  const options = { year: "numeric" };
   const formattedDate = fullDate.toLocaleDateString("en-US", options);
   return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Text, { children: formattedDate ?? "Present" });
 };
@@ -324,12 +330,13 @@ var Publications = ({ publications }) => {
     return null;
   }
   return /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(Section_default, { title: "Publications", children: publications.map((p, key) => {
+    const dateOrStatus = p.status || p.releaseDate;
     return /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(
       Experience_default,
       {
         title: p.name,
         subTitle: p.publisher,
-        date: p.releaseDate,
+        date: dateOrStatus,
         summary: p.summary
       },
       key
@@ -420,7 +427,49 @@ var HonorsAwards = ({ awards }) => {
 var HonorsAwards_default = HonorsAwards;
 
 // src/ui/ConferencePresentations.js
+var import_styled_components10 = __toESM(require("styled-components"));
+
+// src/ui/MonthYearDate.js
+var import_styled_components9 = __toESM(require("styled-components"));
 var import_jsx_runtime14 = require("react/jsx-runtime");
+var Text2 = import_styled_components9.default.div`
+  font-style: italic;
+  font-size: 1.4rem;
+`;
+var MonthYearDate = ({ date }) => {
+  if (!date) {
+    return /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(Text2, { children: "Present" });
+  }
+  if (/^[A-Za-z]+\s+\d{4}$/.test(date.trim())) {
+    return /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(Text2, { children: date });
+  }
+  const fullDate = new Date(date);
+  const options = { year: "numeric", month: "long" };
+  const formattedDate = fullDate.toLocaleDateString("en-US", options);
+  return /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(Text2, { children: formattedDate ?? "Present" });
+};
+var MonthYearDate_default = MonthYearDate;
+
+// src/ui/ConferencePresentations.js
+var import_jsx_runtime15 = require("react/jsx-runtime");
+var Container3 = import_styled_components10.default.div`
+  margin-bottom: 10px;
+`;
+var Meta2 = import_styled_components10.default.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2px;
+`;
+var Title3 = import_styled_components10.default.div`
+  font-weight: 600;
+  font-size: 1.45rem;
+  margin-bottom: 3px;
+`;
+var ConferenceInfo = import_styled_components10.default.div`
+  font-style: italic;
+  font-size: 1.4rem;
+  margin-bottom: 3px;
+`;
 var ConferencePresentations = ({ projects }) => {
   if (!projects) {
     return null;
@@ -428,15 +477,49 @@ var ConferencePresentations = ({ projects }) => {
   const confPresentations = projects.find(
     (project) => project.name && project.name.toLowerCase().includes("conference presentation")
   );
-  if (!confPresentations || !confPresentations.highlights) {
+  if (!confPresentations) {
     return null;
   }
-  return /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(Section_default, { title: "Conference Presentations", children: /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(Experience_default, { highlights: confPresentations.highlights }) }) });
+  let presentations = [];
+  if (confPresentations.presentations) {
+    presentations = confPresentations.presentations;
+  } else if (confPresentations.highlights) {
+    presentations = confPresentations.highlights.map((highlight) => {
+      const match = highlight.match(/^([^:]+):\s*([^.]+)\.\s*—\s*([^|]+)\|\s*(.+)$/);
+      if (match) {
+        return {
+          date: match[1].trim(),
+          title: match[2].trim(),
+          conference: match[3].trim(),
+          location: match[4].trim()
+        };
+      }
+      return {
+        title: highlight,
+        date: "",
+        conference: "",
+        location: ""
+      };
+    });
+  }
+  if (presentations.length === 0) {
+    return null;
+  }
+  return /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(Section_default, { title: "Conference Presentations", children: presentations.map((presentation, key) => /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)(Container3, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)(Meta2, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(Title3, { children: presentation.title }),
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("div", { className: "secondary", children: /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(MonthYearDate_default, { date: presentation.date }) })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)(ConferenceInfo, { children: [
+      presentation.conference,
+      presentation.location && ` | ${presentation.location}`
+    ] })
+  ] }, key)) }) });
 };
 var ConferencePresentations_default = ConferencePresentations;
 
 // src/ui/ResearchExperience.js
-var import_jsx_runtime15 = require("react/jsx-runtime");
+var import_jsx_runtime16 = require("react/jsx-runtime");
 var ResearchExperience = ({ work }) => {
   if (!work) {
     return null;
@@ -448,8 +531,8 @@ var ResearchExperience = ({ work }) => {
   if (researchWork.length === 0) {
     return null;
   }
-  return /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(Section_default, { title: "Research Experience", children: researchWork.map((w, key) => {
-    return /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+  return /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Section_default, { title: "Research Experience", children: researchWork.map((w, key) => {
+    return /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
       Experience_default,
       {
         title: w.position,
@@ -466,7 +549,7 @@ var ResearchExperience = ({ work }) => {
 var ResearchExperience_default = ResearchExperience;
 
 // src/ui/TeachingMentorship.js
-var import_jsx_runtime16 = require("react/jsx-runtime");
+var import_jsx_runtime17 = require("react/jsx-runtime");
 var TeachingMentorship = ({ work }) => {
   if (!work) {
     return null;
@@ -480,8 +563,8 @@ var TeachingMentorship = ({ work }) => {
   if (teachingWork.length === 0) {
     return null;
   }
-  return /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Section_default, { title: "Teaching & Mentorship", children: teachingWork.map((w, key) => {
-    return /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+  return /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(Section_default, { title: "Teaching & Mentorship", children: teachingWork.map((w, key) => {
+    return /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
       Experience_default,
       {
         title: w.position,
@@ -498,7 +581,7 @@ var TeachingMentorship = ({ work }) => {
 var TeachingMentorship_default = TeachingMentorship;
 
 // src/ui/AcademicService.js
-var import_jsx_runtime17 = require("react/jsx-runtime");
+var import_jsx_runtime18 = require("react/jsx-runtime");
 var AcademicService = ({ work }) => {
   if (!work) {
     return null;
@@ -511,8 +594,8 @@ var AcademicService = ({ work }) => {
   if (serviceWork.length === 0) {
     return null;
   }
-  return /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(Section_default, { title: "Academic Service", children: serviceWork.map((w, key) => {
-    return /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+  return /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(Section_default, { title: "Academic Service", children: serviceWork.map((w, key) => {
+    return /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
       Experience_default,
       {
         title: w.position,
@@ -529,58 +612,58 @@ var AcademicService = ({ work }) => {
 var AcademicService_default = AcademicService;
 
 // src/ui/OneLineList.js
-var import_styled_components9 = __toESM(require("styled-components"));
-var import_jsx_runtime18 = require("react/jsx-runtime");
-var Name = import_styled_components9.default.div`
+var import_styled_components11 = __toESM(require("styled-components"));
+var import_jsx_runtime19 = require("react/jsx-runtime");
+var Name = import_styled_components11.default.div`
   font-weight: 600;
   font-size: 1.4rem;
 `;
-var List3 = import_styled_components9.default.div`
+var List3 = import_styled_components11.default.div`
   font-size: 1.4rem;
   margin-left: 5px;
 `;
-var Container3 = import_styled_components9.default.div`
+var Container4 = import_styled_components11.default.div`
   margin-bottom: 5px;
   display: flex;
   align-items: baseline;
 `;
 var OneLineList = ({ name, items }) => {
-  return /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)(Container3, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime18.jsxs)(Name, { children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)(Container4, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime19.jsxs)(Name, { children: [
       name,
       ":"
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(List3, { children: /* @__PURE__ */ (0, import_jsx_runtime18.jsx)("div", { class: "secondary", children: items.join(", ") }) })
+    /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(List3, { children: /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("div", { class: "secondary", children: items.join(", ") }) })
   ] });
 };
 var OneLineList_default = OneLineList;
 
 // src/ui/Skills.js
-var import_jsx_runtime19 = require("react/jsx-runtime");
+var import_jsx_runtime20 = require("react/jsx-runtime");
 var Skills = ({ skills }) => {
   if (!skills) {
     return null;
   }
-  return /* @__PURE__ */ (0, import_jsx_runtime19.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(Section_default, { title: "Skills", children: skills.map((w, key) => {
-    return /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(OneLineList_default, { name: w.name, items: w.keywords }, key);
+  return /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Section_default, { title: "Skills", children: skills.map((w, key) => {
+    return /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(OneLineList_default, { name: w.name, items: w.keywords }, key);
   }) }) });
 };
 var Skills_default = Skills;
 
 // src/ui/Languages.js
-var import_jsx_runtime20 = require("react/jsx-runtime");
+var import_jsx_runtime21 = require("react/jsx-runtime");
 var Languages = ({ languages }) => {
   if (!languages) {
     return null;
   }
-  return /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Section_default, { title: "Languages", children: languages.map((l, key) => {
-    return /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(OneLineList_default, { name: l.language, items: [l.fluency] }, key);
+  return /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Section_default, { title: "Languages", children: languages.map((l, key) => {
+    return /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(OneLineList_default, { name: l.language, items: [l.fluency] }, key);
   }) }) });
 };
 var Languages_default = Languages;
 
 // src/ui/ProfessionalAffiliations.js
-var import_jsx_runtime21 = require("react/jsx-runtime");
+var import_jsx_runtime22 = require("react/jsx-runtime");
 var ProfessionalAffiliations = ({ projects }) => {
   if (!projects) {
     return null;
@@ -591,67 +674,67 @@ var ProfessionalAffiliations = ({ projects }) => {
   if (!profAffiliations || !profAffiliations.highlights) {
     return null;
   }
-  return /* @__PURE__ */ (0, import_jsx_runtime21.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Section_default, { title: "Professional Affiliations", children: /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Experience_default, { highlights: profAffiliations.highlights }) }) });
+  return /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(Section_default, { title: "Professional Affiliations", children: /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(Experience_default, { highlights: profAffiliations.highlights }) }) });
 };
 var ProfessionalAffiliations_default = ProfessionalAffiliations;
 
 // src/ui/References.js
-var import_styled_components10 = __toESM(require("styled-components"));
-var import_jsx_runtime22 = require("react/jsx-runtime");
-var Name2 = import_styled_components10.default.div`
+var import_styled_components12 = __toESM(require("styled-components"));
+var import_jsx_runtime23 = require("react/jsx-runtime");
+var Name2 = import_styled_components12.default.div`
   font-weight: 600;
   font-size: 1.4rem;
   margin-bottom: 5px;
 `;
-var Reference = import_styled_components10.default.p``;
+var Reference = import_styled_components12.default.p``;
 var References = ({ references }) => {
   if (!references) {
     return null;
   }
-  return /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(Section_default, { title: "References", children: references.map((r, key) => {
-    return /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)("div", { style: { marginBottom: "15px" }, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(Name2, { children: r.name }),
-      /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(Reference, { children: r.reference })
+  return /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Section_default, { title: "References", children: references.map((r, key) => {
+    return /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { style: { marginBottom: "15px" }, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Name2, { children: r.name }),
+      /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Reference, { children: r.reference })
     ] }, key);
   }) }) });
 };
 var References_default = References;
 
 // src/ui/Resume.js
-var import_jsx_runtime23 = require("react/jsx-runtime");
-var Layout = import_styled_components11.default.div`
+var import_jsx_runtime24 = require("react/jsx-runtime");
+var Layout = import_styled_components13.default.div`
   max-width: 660px;
   margin: 0 auto;
   line-height: calc(1ex / 0.32);
   margin-bottom: 40px;
 `;
 var Resume = ({ resume }) => {
-  return /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)(Layout, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Hero_default, { basics: resume.basics }),
-    /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Summary_default, { basics: resume.basics }),
-    /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Education_default, { education: resume.education }),
-    /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(ResearchInterests_default, { interests: resume.interests }),
-    /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Publications_default, { publications: resume.publications }),
-    /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Fellowships_default, { awards: resume.awards }),
-    /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(ResearchGrants_default, { awards: resume.awards }),
-    /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(HonorsAwards_default, { awards: resume.awards }),
-    /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(ConferencePresentations_default, { projects: resume.projects }),
-    /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(ResearchExperience_default, { work: resume.work }),
-    /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(TeachingMentorship_default, { work: resume.work }),
-    /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(AcademicService_default, { work: resume.work }),
-    /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Skills_default, { skills: resume.skills }),
-    /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Languages_default, { languages: resume.languages }),
-    /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(ProfessionalAffiliations_default, { projects: resume.projects }),
-    /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(References_default, { references: resume.references })
+  return /* @__PURE__ */ (0, import_jsx_runtime24.jsxs)(Layout, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(Hero_default, { basics: resume.basics }),
+    /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(Summary_default, { basics: resume.basics }),
+    /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(Education_default, { education: resume.education }),
+    /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(ResearchInterests_default, { interests: resume.interests }),
+    /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(Publications_default, { publications: resume.publications }),
+    /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(Fellowships_default, { awards: resume.awards }),
+    /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(ResearchGrants_default, { awards: resume.awards }),
+    /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(HonorsAwards_default, { awards: resume.awards }),
+    /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(ConferencePresentations_default, { projects: resume.projects }),
+    /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(ResearchExperience_default, { work: resume.work }),
+    /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(TeachingMentorship_default, { work: resume.work }),
+    /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(AcademicService_default, { work: resume.work }),
+    /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(Skills_default, { skills: resume.skills }),
+    /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(Languages_default, { languages: resume.languages }),
+    /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(ProfessionalAffiliations_default, { projects: resume.projects }),
+    /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(References_default, { references: resume.references })
   ] });
 };
 var Resume_default = Resume;
 
 // src/index.js
-var import_jsx_runtime24 = require("react/jsx-runtime");
+var import_jsx_runtime25 = require("react/jsx-runtime");
 var render = (resume) => {
-  const sheet = new import_styled_components12.ServerStyleSheet();
-  const html = (0, import_server.renderToString)(sheet.collectStyles(/* @__PURE__ */ (0, import_jsx_runtime24.jsx)(Resume_default, { resume })));
+  const sheet = new import_styled_components14.ServerStyleSheet();
+  const html = (0, import_server.renderToString)(sheet.collectStyles(/* @__PURE__ */ (0, import_jsx_runtime25.jsx)(Resume_default, { resume })));
   const styles = sheet.getStyleTags();
   return `<!DOCTYPE html><head>
   <title>${resume.basics.name} - Resume</title>

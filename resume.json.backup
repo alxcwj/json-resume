@@ -148,22 +148,18 @@
     },
     {
       "name": "The Subjective Social Ladder: Actual, Perceived, and Projected Mobility in 22 Countries",
-      "status": "Under review",
       "summary": "Chow, Alex. \"The Subjective Social Ladder: Actual, Perceived, and Projected Mobility in 22 Countries.\" Under review."
     },
     {
       "name": "How Much Does Education Matter for Social Status? Findings from a Conjoint Experiment",
-      "status": "In preparation",
       "summary": "Chow, Alex. \"How Much Does Education Matter for Social Status? Findings from a Conjoint Experiment.\" In preparation."
     },
     {
       "name": "Residential Relocation Reshapes Daily Exposure Segregation",
-      "status": "Under review",
       "summary": "Qiao, Si, Junxi Qu, Rosina Pradhananga, Alex Chow, Sarah-Eve Dill, David Grusky, and Anthony Gar-On Yeh. \"Residential Relocation Reshapes Daily Exposure Segregation.\" Under review."
     },
     {
       "name": "A Supervised LLM System for Large-Scale, Data-Secure Qualitative Coding",
-      "status": "In preparation",
       "summary": "van der Velden, Max, David Grusky, and Alex Chow. \"A Supervised LLM System for Large-Scale, Data-Secure Qualitative Coding.\" In preparation."
     }
   ],
@@ -262,85 +258,20 @@
   "projects": [
     {
       "name": "Conference Presentations",
-      "presentations": [
-        {
-          "date": "January 2026",
-          "title": "How Much Does Education Matter for Social Status? Findings from a Conjoint Experiment",
-          "conference": "RC28 Online Meeting on Educational Inequalities",
-          "location": "Sciences Po (Virtual)"
-        },
-        {
-          "date": "August 2025",
-          "title": "Perceptions of Social Status: Findings from a Conjoint Experiment",
-          "conference": "American Sociological Association Annual Meeting 2025",
-          "location": "Chicago, IL"
-        },
-        {
-          "date": "November 2023",
-          "title": "Perceptions of Social Status: Findings from a Conjoint Experiment",
-          "conference": "New Methods to Measure Intergenerational Mobility",
-          "location": "Stone Center for Research on Wealth Inequality and Mobility, University of Chicago, IL"
-        },
-        {
-          "date": "August 2023",
-          "title": "The Subjective Social Ladder: Actual, Perceived, and Projected Mobility in 22 Countries",
-          "conference": "American Sociological Association Annual Meeting 2023",
-          "location": "Philadelphia, PA"
-        },
-        {
-          "date": "June 2023",
-          "title": "The Post-Liberal Social Classes: Actual and Perceived Levels of Income Inequality and Associated Values",
-          "conference": "International Sociological Association World Congress of Sociology 2023",
-          "location": "Melbourne, Australia"
-        },
-        {
-          "date": "August 2022",
-          "title": "Expansion and Returns: A Causal Inference Approach to the Positional Value of Education",
-          "conference": "American Sociological Association Annual Meeting 2022",
-          "location": "Los Angeles, CA"
-        },
-        {
-          "date": "August 2021",
-          "title": "Intergenerational Educational Assortative Mating: A Study of Individuals Born Between 1970 and 1985",
-          "conference": "American Sociological Association Annual Meeting 2021",
-          "location": "Virtual"
-        },
-        {
-          "date": "May 2021",
-          "title": "Intergenerational Educational Assortative Mating: A Study of Individuals Born Between 1970 and 1985",
-          "conference": "Canadian Population Society Annual Meeting 2021",
-          "location": "Virtual"
-        },
-        {
-          "date": "August 2019",
-          "title": "Intergenerational Educational Mobility Over the Past Century in Canada",
-          "conference": "American Sociological Association Annual Meeting 2019 (Honors Program)",
-          "location": "New York, NY"
-        },
-        {
-          "date": "June 2019",
-          "title": "Intergenerational Educational Mobility Over the Past Century in Canada",
-          "conference": "Canadian Sociological Association Annual Meeting 2019",
-          "location": "Vancouver, BC"
-        },
-        {
-          "date": "May 2019",
-          "title": "Intergenerational Educational Mobility Over the Past Century in Canada",
-          "conference": "UBC Anthropology and Sociology Undergraduate Conference 2019",
-          "location": "Vancouver, BC"
-        },
-        {
-          "date": "March 2019",
-          "title": "Intergenerational Educational Mobility Over the Past Century in Canada",
-          "conference": "UBC Multidisciplinary Undergraduate Research Conference 2019",
-          "location": "Vancouver, BC"
-        },
-        {
-          "date": "January 2019",
-          "title": "Intergenerational Educational Mobility Over the Past Century in Canada",
-          "conference": "Harvard University National Collegiate Research Conference 2019",
-          "location": "Cambridge, MA"
-        }
+      "highlights": [
+        "Jan 2026: How Much Does Education Matter for Social Status? Findings from a Conjoint Experiment. — RC28 Online Meeting on Educational Inequalities | Sciences Po (Virtual)",
+        "Aug 2025: Perceptions of Social Status: Findings from a Conjoint Experiment. — American Sociological Association Annual Meeting 2025 | Chicago, IL",
+        "Nov 2023: Perceptions of Social Status: Findings from a Conjoint Experiment. — New Methods to Measure Intergenerational Mobility | Stone Center for Research on Wealth Inequality and Mobility, University of Chicago, IL",
+        "Aug 2023: The Subjective Social Ladder: Actual, Perceived, and Projected Mobility in 22 Countries. — American Sociological Association Annual Meeting 2023 | Philadelphia, PA",
+        "Jun 2023: The Post-Liberal Social Classes: Actual and Perceived Levels of Income Inequality and Associated Values. — International Sociological Association World Congress of Sociology 2023 | Melbourne, Australia",
+        "Aug 2022: Expansion and Returns: A Causal Inference Approach to the Positional Value of Education. — American Sociological Association Annual Meeting 2022 | Los Angeles, CA",
+        "Aug 2021: Intergenerational Educational Assortative Mating: A Study of Individuals Born Between 1970 and 1985. — American Sociological Association Annual Meeting 2021 | Virtual",
+        "May 2021: Intergenerational Educational Assortative Mating: A Study of Individuals Born Between 1970 and 1985. — Canadian Population Society Annual Meeting 2021 | Virtual",
+        "Aug 2019: Intergenerational Educational Mobility Over the Past Century in Canada. — American Sociological Association Annual Meeting 2019 (Honors Program) | New York, NY",
+        "Jun 2019: Intergenerational Educational Mobility Over the Past Century in Canada. — Canadian Sociological Association Annual Meeting 2019 | Vancouver, BC",
+        "May 2019: Intergenerational Educational Mobility Over the Past Century in Canada. — UBC Anthropology and Sociology Undergraduate Conference 2019 | Vancouver, BC",
+        "Mar 2019: Intergenerational Educational Mobility Over the Past Century in Canada. — UBC Multidisciplinary Undergraduate Research Conference 2019 | Vancouver, BC",
+        "Jan 2019: Intergenerational Educational Mobility Over the Past Century in Canada. — Harvard University National Collegiate Research Conference 2019 | Cambridge, MA"
       ]
     },
     {
