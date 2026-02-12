@@ -20,8 +20,10 @@ const MonthYearDate = ({ date }) => {
     };
     
     const parts = date.trim().split(' ');
-    const shortMonth = monthMap[parts[0]] || parts[0];
-    return <Text>{shortMonth} {parts[1]}</Text>;
+    if (parts.length === 2) {
+      const shortMonth = monthMap[parts[0]] || parts[0];
+      return <Text>{`${shortMonth} ${parts[1]}`}</Text>;
+    }
   }
 
   const fullDate = new Date(date);

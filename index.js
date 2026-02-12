@@ -456,12 +456,10 @@ var MonthYearDate = ({ date }) => {
       "December": "Dec"
     };
     const parts = date.trim().split(" ");
-    const shortMonth = monthMap[parts[0]] || parts[0];
-    return /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)(Text2, { children: [
-      shortMonth,
-      " ",
-      parts[1]
-    ] });
+    if (parts.length === 2) {
+      const shortMonth = monthMap[parts[0]] || parts[0];
+      return /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(Text2, { children: `${shortMonth} ${parts[1]}` });
+    }
   }
   const fullDate = new Date(date);
   const options = { year: "numeric", month: "short" };
