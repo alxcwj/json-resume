@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const Text = styled.div`
   font-style: italic;
   font-size: 1.4rem;
+  white-space: nowrap;
 `;
 
 const MonthYearDate = ({ date }) => {

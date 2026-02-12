@@ -197,6 +197,7 @@ var import_jsx_runtime5 = require("react/jsx-runtime");
 var Text = import_styled_components5.default.div`
   font-style: italic;
   font-size: 1.4rem;
+  white-space: nowrap;
 `;
 var DateComponent = ({ date }) => {
   if (!date) {
@@ -221,6 +222,7 @@ var Range = import_styled_components6.default.div`
   display: flex;
   font-style: italic;
   font-size: 13px;
+  white-space: nowrap;
 `;
 var DateRange = ({ startDate, endDate }) => {
   return /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(Range, { children: [
@@ -435,6 +437,7 @@ var import_jsx_runtime14 = require("react/jsx-runtime");
 var Text2 = import_styled_components9.default.div`
   font-style: italic;
   font-size: 1.4rem;
+  white-space: nowrap;
 `;
 var MonthYearDate = ({ date }) => {
   if (!date) {
