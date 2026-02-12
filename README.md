@@ -1,24 +1,259 @@
+# jsonresume-theme-academic-professional
 
-The easy way to host your resume is by making a `resume.json` on gist.github.com. 
+An academic-oriented JSON Resume theme based on [jsonresume-theme-professional](https://github.com/jsonresume/jsonresume-theme-professional) v1.1.0. This theme reorders sections to follow academic CV conventions while preserving the professional theme's clean typography and styling.
 
-For example mine can be found at https://gist.github.com/thomasdavis/c9dcfa1b37dec07fb2ee7f36d7278105 which then automatically gets hosted at https://registry.jsonresume.org/thomasdavis 
+## Features
 
-You can just edit your Gist using the online GUI and it should update within less than a minute. 
+- **Academic Section Order**: Sections are ordered to match academic CV flow (education, research interests, publications, fellowships, research grants, honors & awards, etc.)
+- **Professional Styling**: Maintains the clean, professional look with proper fonts, spacing, bold titles, and italic dates
+- **Smart Section Mapping**: Intelligently maps standard JSON Resume fields to academic sections
+- **No Schema Changes Required**: Works with standard JSON Resume format in Phase 1
+- **Awards Categorization**: Automatically splits awards into Fellowships, Research Grants, and Honors & Awards based on title keywords
 
-## But
+## Section Order
 
-If you would like to have your `resume.json` in a repository aka like this. 
+The theme renders sections in the following academic CV order:
 
-You can set up a Github Action that automatically updates your gist `resume.json` to match what is in your repo everytime you push. 
+1. Education
+2. Research Interests
+3. Publications
+4. Fellowships
+5. Research Grants
+6. Honors & Awards
+7. Conference Presentations
+8. Research Experience
+9. Teaching & Mentorship
+10. Academic Service
+11. Skills
+12. Languages
+13. Professional Affiliations
 
-If you checkout the `.github/workflows/gist.yml` file you should be able to figure it out with relative ease. Or feel free to ping me an issue. 
+## Installation
 
-The basic steps are 
+### Global Installation
 
-1) Create a gist called `resume.json` 
-2) Create or fork this repo and commit your updated `resume.json` 
-3) Create a Personal Github token that has just the `gist` scope 
-4) Go to your repository settings, then to the secrets page, and add a new secret called `TOKEN` with the value being from the token you created in 3) 
-5) Now simply push to your repo, and your `resume.json` from the repo, will publish and override your gist `resume.json` and thus updating the registry to match
+```bash
+# Install resume-cli globally
+npm install -g resume-cli
 
-Enjoy!
+# Clone this repository
+git clone https://github.com/alxcwj/json-resume.git
+cd json-resume
+
+# Install dependencies
+npm install
+```
+
+### Local Development
+
+```bash
+# Build the theme
+npm run build
+
+# Serve locally
+npx resume serve --theme . --resume resume.json --port 8080
+
+# Export to HTML
+npx resume export resume.html --theme . --resume resume.json
+```
+
+## Using This Theme
+
+### Option 1: Install from GitHub
+
+In your JSON resume repository:
+
+```bash
+npm install git+https://github.com/alxcwj/json-resume.git
+```
+
+Then in your `resume.json`:
+
+```json
+{
+  "meta": {
+    "theme": "academic-professional"
+  },
+  ...
+}
+```
+
+### Option 2: Use Locally
+
+Clone this repository and use it as your theme directory:
+
+```bash
+resume serve --theme /path/to/json-resume --resume /path/to/your/resume.json
+```
+
+## Section Mapping Rules
+
+This theme uses the standard JSON Resume schema but maps sections intelligently for academic CVs:
+
+### Research Interests
+- **Source**: `resume.interests[]`
+- **Mapping**: Finds the interest with `name` matching "Research Interests" (case-insensitive)
+- **Renders**: Keywords as comma-separated list
+
+### Conference Presentations
+- **Source**: `resume.projects[]`
+- **Mapping**: Finds project with `name` matching "Conference Presentations" (case-insensitive)
+- **Renders**: Highlights as bullet list
+
+### Professional Affiliations
+- **Source**: `resume.projects[]`
+- **Mapping**: Finds project with `name` matching "Professional Affiliations" (case-insensitive)
+- **Renders**: Highlights as bullet list
+
+### Research Experience
+- **Source**: `resume.work[]`
+- **Filter**: Work entries where `position` includes "Research"
+- **Renders**: Standard work experience format
+
+### Teaching & Mentorship
+- **Source**: `resume.work[]`
+- **Filter**: Work entries where `position` includes "Teaching" or highlights include TA/mentor/supervisor keywords
+- **Renders**: Standard work experience format
+
+### Academic Service
+- **Source**: `resume.work[]`
+- **Filter**: Work entries where `position` includes "Service" or equals "Academic Service"
+- **Renders**: Standard work experience format
+
+### Fellowships
+- **Source**: `resume.awards[]`
+- **Filter**: Awards where `title` includes "fellowship" or "scholars program" (case-insensitive)
+- **Renders**: Award title, awarder, and date
+
+### Research Grants
+- **Source**: `resume.awards[]`
+- **Filter**: Awards where `title` includes "research opportunity", "research grant", or "grant" (excluding fellowships)
+- **Renders**: Award title, awarder, and date
+
+### Honors & Awards
+- **Source**: `resume.awards[]`
+- **Filter**: Awards that don't match fellowship or grant criteria
+- **Renders**: Award title, awarder, and date
+
+## Example resume.json Structure
+
+```json
+{
+  "meta": {
+    "theme": "academic-professional"
+  },
+  "basics": { ... },
+  "education": [
+    {
+      "institution": "Stanford University",
+      "area": "Sociology",
+      "studyType": "Ph.D. Candidate",
+      "startDate": "2020",
+      "courses": [
+        "Dissertation: The Social Significance of Education"
+      ]
+    }
+  ],
+  "interests": [
+    {
+      "name": "Research Interests",
+      "keywords": [
+        "Social stratification, inequality, mobility",
+        "Educational inequality, higher education"
+      ]
+    }
+  ],
+  "publications": [ ... ],
+  "awards": [
+    {
+      "title": "Knight-Hennessy Scholars Program",
+      "awarder": "Stanford University",
+      "date": "2020"
+    },
+    {
+      "title": "Graduate Research Opportunity",
+      "awarder": "Stanford School of Humanities and Sciences",
+      "date": "2025"
+    },
+    {
+      "title": "Governor General's Silver Medal in Arts",
+      "awarder": "University of British Columbia",
+      "date": "2020"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Conference Presentations",
+      "highlights": [
+        "Jan 2026: How Much Does Education Matter for Social Status...",
+        "Aug 2025: Perceptions of Social Status..."
+      ]
+    },
+    {
+      "name": "Professional Affiliations",
+      "highlights": [
+        "American Sociological Association",
+        "Canadian Sociological Association"
+      ]
+    }
+  ],
+  "work": [
+    {
+      "name": "Stanford University",
+      "position": "Graduate Research Assistant",
+      "startDate": "2020",
+      "summary": "Research roles in sociology...",
+      "highlights": [ ... ]
+    },
+    {
+      "name": "Stanford University",
+      "position": "Graduate Teaching Assistant",
+      "startDate": "2020",
+      "endDate": "2025",
+      "summary": "Graduate teaching, mentorship...",
+      "highlights": [ ... ]
+    },
+    {
+      "name": "University of British Columbia",
+      "position": "Academic Service",
+      "startDate": "2016",
+      "endDate": "2020",
+      "summary": "Academic service roles...",
+      "highlights": [ ... ]
+    }
+  ],
+  "skills": [ ... ],
+  "languages": [ ... ]
+}
+```
+
+## Building the Theme
+
+The theme uses esbuild to transpile React/JSX components:
+
+```bash
+npm run build
+```
+
+This compiles `src/index.js` and all components into `index.js`.
+
+## Testing Checklist
+
+- [ ] All content from resume.json appears in the output
+- [ ] Sections appear in the correct academic order
+- [ ] Styling matches the professional theme (fonts, spacing, bold/italic)
+- [ ] Awards are correctly split into Fellowships, Research Grants, and Honors & Awards
+- [ ] Work entries are correctly filtered into Research Experience, Teaching & Mentorship, and Academic Service
+- [ ] Research Interests display correctly without label prefix
+- [ ] Conference Presentations and Professional Affiliations render from projects
+- [ ] PDF export maintains clean formatting and page breaks
+
+## License
+
+MIT
+
+## Credits
+
+Based on [jsonresume-theme-professional](https://github.com/jsonresume/jsonresume-theme-professional) v1.1.0 by the JSON Resume community.
+
+Modified for academic CVs by Alex Chow.

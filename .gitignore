@@ -2,5 +2,6 @@ node_modules/
 package/
 *.tgz
 resume.html
+test-output.html
 *.pdf
 .DS_Store
