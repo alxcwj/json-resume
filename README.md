@@ -145,98 +145,6 @@ This theme uses the standard JSON Resume schema but maps sections intelligently 
 - **Filter**: Awards that don't match fellowship or grant criteria
 - **Renders**: Award title, awarder, and date
 
-## Example resume.json Structure
-
-```json
-{
-  "meta": {
-    "theme": "academic-professional"
-  },
-  "basics": { ... },
-  "education": [
-    {
-      "institution": "Stanford University",
-      "area": "Sociology",
-      "studyType": "Ph.D. Candidate",
-      "startDate": "2020",
-      "courses": [
-        "Dissertation: The Social Significance of Education"
-      ]
-    }
-  ],
-  "interests": [
-    {
-      "name": "Research Interests",
-      "keywords": [
-        "Social stratification, inequality, mobility",
-        "Educational inequality, higher education"
-      ]
-    }
-  ],
-  "publications": [ ... ],
-  "awards": [
-    {
-      "title": "Knight-Hennessy Scholars Program",
-      "awarder": "Stanford University",
-      "date": "2020"
-    },
-    {
-      "title": "Graduate Research Opportunity",
-      "awarder": "Stanford School of Humanities and Sciences",
-      "date": "2025"
-    },
-    {
-      "title": "Governor General's Silver Medal in Arts",
-      "awarder": "University of British Columbia",
-      "date": "2020"
-    }
-  ],
-  "projects": [
-    {
-      "name": "Conference Presentations",
-      "highlights": [
-        "Jan 2026: How Much Does Education Matter for Social Status...",
-        "Aug 2025: Perceptions of Social Status..."
-      ]
-    },
-    {
-      "name": "Professional Affiliations",
-      "highlights": [
-        "American Sociological Association",
-        "Canadian Sociological Association"
-      ]
-    }
-  ],
-  "work": [
-    {
-      "name": "Stanford University",
-      "position": "Graduate Research Assistant",
-      "startDate": "2020",
-      "summary": "Research roles in sociology...",
-      "highlights": [ ... ]
-    },
-    {
-      "name": "Stanford University",
-      "position": "Graduate Teaching Assistant",
-      "startDate": "2020",
-      "endDate": "2025",
-      "summary": "Graduate teaching, mentorship...",
-      "highlights": [ ... ]
-    },
-    {
-      "name": "University of British Columbia",
-      "position": "Academic Service",
-      "startDate": "2016",
-      "endDate": "2020",
-      "summary": "Academic service roles...",
-      "highlights": [ ... ]
-    }
-  ],
-  "skills": [ ... ],
-  "languages": [ ... ]
-}
-```
-
 ## Building the Theme
 
 The theme uses esbuild to transpile React/JSX components:
@@ -247,16 +155,6 @@ npm run build
 
 This compiles `src/index.js` and all components into `index.js`.
 
-## Testing Checklist
-
-- [ ] All content from resume.json appears in the output
-- [ ] Sections appear in the correct academic order
-- [ ] Styling matches the professional theme (fonts, spacing, bold/italic)
-- [ ] Awards are correctly split into Fellowships, Research Grants, and Honors & Awards
-- [ ] Work entries are correctly filtered into Research Experience, Teaching & Mentorship, and Academic Service
-- [ ] Research Interests display correctly without label prefix
-- [ ] Conference Presentations and Professional Affiliations render from projects
-- [ ] PDF export maintains clean formatting and page breaks
 
 ## License
 
