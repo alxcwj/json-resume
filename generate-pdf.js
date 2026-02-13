@@ -50,7 +50,7 @@ async function generatePDF() {
   });
 
   console.log('Generating PDF...');
-  const pdfPath = path.join(__dirname, 'Alex Chow - Resume.pdf');
+  const pdfPath = path.join(__dirname, 'resume.pdf');
   
   await page.pdf({
     path: pdfPath,

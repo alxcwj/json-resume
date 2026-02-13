@@ -46,6 +46,7 @@
       "institution": "Stanford University",
       "area": "Sociology",
       "studyType": "Master of Arts",
+      "startDate": "2020",
       "endDate": "2022",
       "courses": [
         "Master’s Thesis: Expansion and Returns: A Causal Inference Approach to the Positional Value of Education",
@@ -149,22 +150,22 @@
     {
       "name": "The Subjective Social Ladder: Actual, Perceived, and Projected Mobility in 22 Countries",
       "status": "Under review",
-      "summary": "Chow, Alex. \"The Subjective Social Ladder: Actual, Perceived, and Projected Mobility in 22 Countries.\" Under review."
+      "summary": "Chow, Alex. \"The Subjective Social Ladder: Actual, Perceived, and Projected Mobility in 22 Countries.\""
     },
     {
       "name": "How Much Does Education Matter for Social Status? Findings from a Conjoint Experiment",
       "status": "In preparation",
-      "summary": "Chow, Alex. \"How Much Does Education Matter for Social Status? Findings from a Conjoint Experiment.\" In preparation."
+      "summary": "Chow, Alex. \"How Much Does Education Matter for Social Status? Findings from a Conjoint Experiment.\""
     },
     {
       "name": "Residential Relocation Reshapes Daily Exposure Segregation",
       "status": "Under review",
-      "summary": "Qiao, Si, Junxi Qu, Rosina Pradhananga, Alex Chow, Sarah-Eve Dill, David Grusky, and Anthony Gar-On Yeh. \"Residential Relocation Reshapes Daily Exposure Segregation.\" Under review."
+      "summary": "Qiao, Si, Junxi Qu, Rosina Pradhananga, Alex Chow, Sarah-Eve Dill, David Grusky, and Anthony Gar-On Yeh. \"Residential Relocation Reshapes Daily Exposure Segregation.\""
     },
     {
       "name": "A Supervised LLM System for Large-Scale, Data-Secure Qualitative Coding",
       "status": "In preparation",
-      "summary": "van der Velden, Max, David Grusky, and Alex Chow. \"A Supervised LLM System for Large-Scale, Data-Secure Qualitative Coding.\" In preparation."
+      "summary": "van der Velden, Max, David Grusky, and Alex Chow. \"A Supervised LLM System for Large-Scale, Data-Secure Qualitative Coding.\""
     }
   ],
   "awards": [
