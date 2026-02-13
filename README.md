@@ -64,36 +64,7 @@ npm run export
 
 The exported files will be:
 - `resume.html` - HTML version of your resume
-- `Alex Chow - Resume.pdf` - PDF version of your resume
-
-## Using This Theme
-
-### Option 1: Install from GitHub
-
-In your JSON resume repository:
-
-```bash
-npm install git+https://github.com/alxcwj/json-resume.git
-```
-
-Then in your `resume.json`:
-
-```json
-{
-  "meta": {
-    "theme": "academic-professional"
-  },
-  ...
-}
-```
-
-### Option 2: Use Locally
-
-Clone this repository and use it as your theme directory:
-
-```bash
-resume serve --theme /path/to/json-resume --resume /path/to/your/resume.json
-```
+- `resume.pdf` - PDF version of your resume
 
 ## Section Mapping Rules
 
