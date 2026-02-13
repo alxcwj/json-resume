@@ -7,7 +7,7 @@ An academic-oriented JSON Resume theme based on [jsonresume-theme-professional](
 - **Academic Section Order**: Sections are ordered to match academic CV flow (education, research interests, publications, fellowships, research grants, honors & awards, etc.)
 - **Professional Styling**: Maintains the clean, professional look with proper fonts, spacing, bold titles, and italic dates
 - **Smart Section Mapping**: Intelligently maps standard JSON Resume fields to academic sections
-- **No Schema Changes Required**: Works with standard JSON Resume format in Phase 1
+- **No Schema Changes Required**: Works with standard JSON Resume format 
 - **Awards Categorization**: Automatically splits awards into Fellowships, Research Grants, and Honors & Awards based on title keywords
 
 ## Section Order
@@ -25,8 +25,7 @@ The theme renders sections in the following academic CV order:
 9. Teaching & Mentorship
 10. Academic Service
 11. Skills
-12. Languages
-13. Professional Affiliations
+12. Professional Affiliations
 
 ## Installation
 
