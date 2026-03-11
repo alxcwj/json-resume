@@ -4,6 +4,8 @@ import MonthYearDate from './MonthYearDate';
 
 const Container = styled.div`
   margin-bottom: 10px;
+  break-inside: avoid;
+  page-break-inside: avoid;
 `;
 
 const Meta = styled.div`

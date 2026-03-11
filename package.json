@@ -38,6 +38,6 @@
   "devDependencies": {
     "esbuild": "^0.27.3",
     "playwright": "^1.58.2",
-    "resume-cli": "^3.0.8"
+    "resume-cli": "^3.0.0"
   }
 }

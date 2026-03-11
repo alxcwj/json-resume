@@ -14,10 +14,18 @@ const MonthYearDate = ({ date }) => {
   // If it already looks like "Month Year" format, convert to short month
   if (/^[A-Za-z]+\s+\d{4}$/.test(date.trim())) {
     const monthMap = {
-      'January': 'Jan', 'February': 'Feb', 'March': 'Mar', 
-      'April': 'Apr', 'May': 'May', 'June': 'Jun',
-      'July': 'Jul', 'August': 'Aug', 'September': 'Sep',
-      'October': 'Oct', 'November': 'Nov', 'December': 'Dec'
+      'January': 'Jan',
+      'February': 'Feb',
+      'March': 'Mar', 
+      'April': 'Apr',
+      'May': 'May',
+      'June': 'Jun',
+      'July': 'Jul',
+      'August': 'Aug',
+      'September': 'Sep',
+      'October': 'Oct',
+      'November': 'Nov',
+      'December': 'Dec'
     };
     
     const parts = date.trim().split(' ');

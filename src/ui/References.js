@@ -1,30 +1,39 @@
-import styled from 'styled-components';
 import Section from './Section';
-
-const Name = styled.div`
-  font-weight: 600;
-  font-size: 1.4rem;
-  margin-bottom: 5px;
-`;
-
-const Reference = styled.p``;
+import List from './List';
 
 const References = ({ references }) => {
   if (!references) {
     return null;
   }
 
+  const referenceItems = references
+    .map((reference) => {
+      const parts = [reference.name];
+
+      if (reference.role) {
+        parts.push(`(${reference.role})`);
+      }
+
+      const label = parts.filter(Boolean).join(' ');
+
+      if (reference.contact) {
+        return `${label}: ${reference.contact}`;
+      }
+
+      return label;
+    })
+    .filter(Boolean);
+
+  if (referenceItems.length === 0) {
+    return null;
+  }
+
   return (
     <div>
       <Section title="References">
-        {references.map((r, key) => {
-          return (
-            <div key={key} style={{ marginBottom: '15px' }}>
-              <Name>{r.name}</Name>
-              <Reference>{r.reference}</Reference>
-            </div>
-          );
-        })}
+        <div className="secondary">
+          <List items={referenceItems} />
+        </div>
       </Section>
     </div>
   );

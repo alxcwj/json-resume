@@ -13,6 +13,7 @@ const AcademicService = ({ work }) => {
     
     return (
       positionLower.includes('service') ||
+      positionLower.includes('reviewer') ||
       positionLower.includes('academic service') ||
       summaryLower.includes('academic service')
     );

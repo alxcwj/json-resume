@@ -23,6 +23,8 @@ const SubTitle = styled.div`
 
 const Container = styled.div`
   margin-bottom: 10px;
+  break-inside: avoid;
+  page-break-inside: avoid;
 `;
 
 const Summary = styled.p`

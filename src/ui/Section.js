@@ -2,13 +2,19 @@ import styled from 'styled-components';
 
 const Section = styled.div`
   max-width: 700px;
-  margin: 0 auto 18px;
+  margin: 0 auto;
+  padding-bottom: 18px;
+  display: flow-root;
+  break-inside: auto;
+  page-break-inside: auto;
 
   h2 {
     margin: 0;
     padding: 0;
     margin-bottom: 3px;
     font-weight: 600;
+    break-after: avoid;
+    page-break-after: avoid;
   }
 
   hr {
@@ -16,6 +22,8 @@ const Section = styled.div`
     padding: 0;
     margin-top: 7px;
     margin-bottom: 3px;
+    break-after: avoid;
+    page-break-after: avoid;
   }
 `;
 
